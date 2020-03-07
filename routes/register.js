@@ -36,7 +36,7 @@ router.get('/', async function (req, res) {
 router.post('/new_user', (req, res) => {
     try {
         console.log("hello " + req.body);
-        User.register(new User({ username: req.body.username, email: req.body.email, phoneno: req.body.phoneno, aadharno: req.body.aadharno }), req.body.password, function (err, user) {
+        User.register(new User({ username: req.body.username, email: req.body.email, phoneno: req.body.phoneno }), req.body.password, function (err, user) {
             if (err) {
                 console.log("error in user registering!")
                 console.log(err);

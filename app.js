@@ -10,6 +10,7 @@ var express = require("express"),
     loginRoute = require('./routes/login'),
     protectRoute = require('./routes/protect'),
     ejs = require("ejs");
+    // methodOverride = require("method-override");
     
 mongoose.connect("mongodb://localhost/Notes",{ useNewUrlParser: true, useUnifiedTopology: true },()=>{
     console.log("db connected")
@@ -29,7 +30,7 @@ app.use(express.static(__dirname + '/public'));
 app.set("view engine", "ejs");
 app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({ extended: true }));
-
+// app.use(express.methodOverride());
 app.use('/Login', loginRoute);
 app.use('/Signup', registerRoute);
 app.use('/Protected', protectRoute);

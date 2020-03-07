@@ -26,7 +26,7 @@ router.get("/", isLoggedIn, (req, res) => {
     res.render("secret")
 })
 
-router.get("/notes/:username", (req, res) => {
+router.get("/notes/:username",isLoggedIn, (req, res) => {
     var name = req.params.username;
     Notes.findOne({ 'username': name }, (err, notes) => {
         if (err) {
@@ -38,7 +38,12 @@ router.get("/notes/:username", (req, res) => {
     })
 })
 
-router.put("/notes/:username/push", (req, res) => {
+// router.get("/notes/:username", (req, res) => {
+//     res.render("addnotes");
+// })
+
+router.post("/notes/:username/push",isLoggedIn, (req, res) => {
+    console.log("fejgewhg");
     var name = req.params.username;
     var msg = req.body.note;
     var obj = {'note':msg,'date_added':Date.now()};
@@ -47,7 +52,8 @@ router.put("/notes/:username/push", (req, res) => {
             console.log(error);
         }
         else {
-            res.send(note);
+            // res.send(note);
+            res.redirect("/Protected/notes/"+req.params.username);
         }
     })
 })

@@ -214,7 +214,7 @@
         <nav>
             <ul>
                 <li><a href="#" id="note">Notes</a></li>
-                <li><a href="#">AddNote</a></li>
+                <!-- <li><a id="addnote">AddNote</a></li> -->
                 <li><a href="/login">LogIn</a></li>
                 <li><a href="/signup">SignIn</a></li>
             </ul>
@@ -279,6 +279,10 @@
         document.getElementById('note').addEventListener('click',()=>{
         console.log("clickeed");
         window.location.replace("/Protected/notes/"+localStorage.getItem('username'));
+    });
+    document.getElementById('addnote').addEventListener('click',()=>{
+        console.log("clicked");
+        window.location.replace("/Protected/notes/"+localStorage.getItem('username')+'/push');
     });
     </script>
 </body>

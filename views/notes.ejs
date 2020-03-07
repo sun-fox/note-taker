@@ -144,10 +144,10 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
             <a class="nav-item nav-link active" href="#" >Notes</a>
-            <a class="nav-item nav-link" href="/addnotes">Add Notes</a>
-            <a class="nav-item nav-link" href="/signup">SignIn<span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="/login">LogIn </a>
-            <a class="nav-item nav-link disabled" href="/logout">Logout </a>
+            <!-- <a class="nav-item nav-link" href="/addnotes">Add Notes</a> -->
+            <!-- <a class="nav-item nav-link" href="/signup">SignIn<span class="sr-only">(current)</span></a> -->
+            <!-- <a class="nav-item nav-link disabled" href="/login">LogIn </a> -->
+            <a class="nav-item nav-link " href="/logout">Logout </a>
             <!-- <a class="nav-item nav-link disabled" href="#">Disabled</a> -->
           </div>
         </div>
@@ -160,6 +160,25 @@
         </aside>
         <%})%>
     </div>
+
+    <div>
+        <form method="POST" id="noteform" action="/Protected/notes/test/push">
+            <input value="" placeholder="Lorem Ipsum Note" name="note" style="margin-left: 2%;">&nbsp;&nbsp;
+            <button class="btn  btn-warning" id ="form">ADD NOTE</button>
+          </form>
+          <!-- <button class="btn  btn-warning" onclick="myFunction()">try</button> -->
+    </div>
+    <script>
+            document.getElementById('form').addEventListener('click',()=>{
+                console.log("clicked");
+                document.getElementById("noteform").action = "/Protected/notes/"+localStorage.getItem('username')+"/push";
+            });
+    </script>
+    <!-- <script>
+        function myFunction() {
+            document.getElementById("noteform").action = "/Protected/notes/"+localStorage.getItem('username')+"/push";
+        }
+        </script> -->
 </body>
 
 </html>

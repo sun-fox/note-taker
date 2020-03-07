@@ -16,10 +16,6 @@ const userSchema =new mongoose.Schema({
   phoneno:{
       type:String,
       requied:true
-  },
-  aadharno:{
-      type:String,
-      requied:true
   }
 });
 userSchema.plugin(passportLocalMongoose);
