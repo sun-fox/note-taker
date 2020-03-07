@@ -5,7 +5,8 @@ var router = express.Router(),
     bodyParser = require("body-parser"),
     localStrategy = require("passport-local"),
     passportLocalMongoose = require("passport-local-mongoose"),
-    User = require("../models/user");
+    User = require("../models/user"),
+    Notes = require("../models/notes");
 
 router.use(require("express-session")({
     secret: "secret!",
@@ -43,7 +44,16 @@ router.post('/new_user', (req, res) => {
             }
             passport.authenticate("local")(req, res, () => {
                 console.log("User Authenticated")
-                res.redirect("/");
+                var obj = new Notes({'username':req.body.username,'email': req.body.email,'notes':[]});
+                obj.save((err,note)=>{
+                    if(err){
+                        console.log(err);
+                    }
+                    else{
+                        console.log("initialization note added");
+                        res.redirect("/");
+                    }
+                });
             })
         })
     }
