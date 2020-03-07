@@ -35,8 +35,13 @@ app.use('/Signup', registerRoute);
 app.use('/Protected', protectRoute);
 
 app.get("/",(req,res)=>{
-    res.send("Hello");
+    res.render("index");
 })
+
+app.get("/logout", function(req, res) {
+    req.logout();
+    res.redirect("/");
+});
 
 app.listen(process.env.PORT || 3000, function() {
     console.log("Server started!!!");

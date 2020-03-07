@@ -52,11 +52,6 @@ router.put("/notes/:username/push", (req, res) => {
     })
 })
 
-// router.post("/notes/:username/add", (req, res) => {
-//     var name = req.parmas.username;
-//     var notte = new Notes({})
-// })
-
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) {
         return next();

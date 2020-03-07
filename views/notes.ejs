@@ -46,8 +46,6 @@
         .wrapper {
             margin: 60px auto 0 auto;
         }
-
-        /* Note styles */
         .note-wrap {
             width: 235px;
             min-height: 235px;
@@ -134,9 +132,26 @@
             transform: rotate(-1deg);
         }
     </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">GSOC Note-Viewer</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="#" >Notes</a>
+            <a class="nav-item nav-link" href="/addnotes">Add Notes</a>
+            <a class="nav-item nav-link" href="/signup">SignIn<span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="/login">LogIn </a>
+            <a class="nav-item nav-link disabled" href="/logout">Logout </a>
+            <!-- <a class="nav-item nav-link disabled" href="#">Disabled</a> -->
+          </div>
+        </div>
+      </nav>
     <div class="wrapper clearfix">
         <% notes.notes.forEach((note)=>{%>
         <aside class="note-wrap note-yellow">

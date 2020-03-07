@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Note-Taker</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(https://images.unsplash.com/photo-1519327232521-1ea2c736d34d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60) no-repeat;
+            background-size: cover;
+            color: black;
+            font-family: "open sans";
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            color: white;
+            background: rgba(0, 0, 0, 0.2)
+        }
+
+        header div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: Pacifico;
+            margin: 0 2rem;
+        }
+
+        header div i {
+            font-size: 2rem;
+            margin: 1rem;
+        }
+
+
+        header nav {
+            padding: 1rem 2rem;
+        }
+
+        nav ul li {
+            list-style: none;
+            display: inline;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 5px;
+        }
+
+        nav li a {
+            padding: 1rem;
+            margin: 1rem;
+            text-decoration: none;
+            color: white;
+            transition: all 250ms ease-in;
+        }
+
+        nav li a:hover {
+            background: rgba(255, 255, 255, .3);
+            color: black;
+        }
+
+
+        .titles {
+            color: white;
+            text-align: center;
+            width: 50vw;
+            margin: 0 auto;
+        }
+
+        .titles h1 {
+            font-family: Pacifico;
+            font-size: 5rem;
+            margin-bottom: 0;
+            text-shadow: 1px 1px 0 black;
+
+        }
+
+        .titles p {
+            letter-spacing: 3px;
+            text-shadow: 1px 1px 0 black;
+        }
+
+        .container-boxes {
+            margin: 0 auto;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+            max-width: 80vw;
+        }
+
+        .box {
+            background: rgba(255, 255, 255, .5);
+            margin: 1rem;
+            padding: .5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 350px;
+            max-height: 180px;
+            min-height: 180px;
+            transition: all 250ms ease-out;
+        }
+
+        .box:hover {
+            background: rgba(255, 255, 255, .7);
+            transform: translateY(-20%);
+        }
+
+        .box a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .icon {
+            font-size: 3rem;
+            padding: 1rem;
+        }
+
+        .text h3 {
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 0;
+        }
+
+        .text p {
+            margin-top: 1rem;
+            line-height: 1.5rem;
+            text-align: left;
+        }
+
+        .text {
+            padding: .5rem;
+        }
+
+
+        /* MEDIAQUERIES */
+
+
+        @media (max-width: 1160px) {
+            .icon {
+                font-size: 2rem;
+                padding: 0.5rem;
+            }
+
+            .text h3 {
+                text-transform: uppercase;
+                letter-spacing: 4px;
+                margin-bottom: 0;
+                font-size: 1rem;
+            }
+
+            .text p {
+                margin-top: 1rem;
+                line-height: 1.5rem;
+                text-align: left;
+                font-size: .8rem;
+            }
+
+            nav li a:hover {
+                background: none;
+                color: black;
+            }
+        }
+
+
+        @media (max-width: 850px) {
+            body {
+                height: 100%;
+            }
+
+            .container-boxes {
+                flex-direction: column;
+            }
+
+            .box:hover {
+                background: rgba(255, 255, 255, .7);
+                transform: none;
+            }
+
+            .titles h1 {
+                font-size: 3rem;
+            }
+        }
+    </style>
+    
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <header>
+        <div>
+            <i class="fas fa-notepad"></i>
+            <p style="font-size: 2rem;">Note Taker</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" id="note">Notes</a></li>
+                <li><a href="#">AddNote</a></li>
+                <li><a href="/login">LogIn</a></li>
+                <li><a href="/signup">SignIn</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="titles">
+
+        <h1>GSOC Note Taker</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam maiores consectetur, laboriosam rerum
+            obcaecati.</p>
+
+    </section>
+
+    <section class="container-boxes">
+        <div class="box">
+
+            <div class="icon">
+                <a href=""><i class="fas fa-fire"></i></a>
+            </div>
+
+            <div class="text">
+                <a href="">
+                    <h3>The GSoc Assignment</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis possimus molestiae quia vitae vero ad numquam nisi fuga ducimus nihil?</p>
+                </a>
+            </div>
+
+        </div>
+
+        <div class="box">
+
+            <div class="icon">
+                <a href=""><i class="fas fa-seedling"></i></a>
+            </div>
+
+            <div class="text">
+                <a href="">
+                    <h3>The Gsoc Proposal</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, aperiam. Velit, aspernatur consequuntur. Quos sint eveniet aliquam culpa consequuntur officia!</p>
+                </a>
+            </div>
+
+        </div>
+
+        <div class="box">
+
+            <div class="icon">
+                <a href=""><i class="fas fa-address-card"></i></a>
+            </div>
+
+            <div class="text">
+                <a href="">
+                    <h3>The Gosc Selction Letter</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam laborum adipisci incidunt? Ea magni facere numquam! Officia ea dolorem facilis.</p>
+                </a>
+            </div>
+
+        </div>
+    </section>
+    <script>
+        document.getElementById('note').addEventListener('click',()=>{
+        console.log("clickeed");
+        window.location.replace("/Protected/notes/"+localStorage.getItem('username'));
+    });
+    </script>
+</body>
+
+</html>
