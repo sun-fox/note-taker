@@ -8,7 +8,7 @@ For a detailed introduction, full list of features and architecture
 overview please visit the official project page:
 <https://gsoc-noter.herokuapp.com/>
 
-## Setup
+## Setup :
 
 ### From Sources
 
