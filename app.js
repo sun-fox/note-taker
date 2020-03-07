@@ -12,7 +12,7 @@ var express = require("express"),
     protectRoute = require('./routes/protect'),
     ejs = require("ejs");
     
-mongoose.connect(process.env.REMOTEDB,{ useNewUrlParser: true, useUnifiedTopology: true },()=>{
+mongoose.connect(process.env.LOCALDB,{ useNewUrlParser: true, useUnifiedTopology: true },()=>{
     console.log("db connected")
 });
 
