@@ -193,11 +193,8 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <a class="nav-item nav-link active" id="note">Notes</a>
-                <!-- <a class="nav-item nav-link" href="/addnotes">Add Notes</a> -->
                 <a class="nav-item nav-link" href="/signup">SignIn</a>
                 <a class="nav-item nav-link" href="/login">LogIn <span class="sr-only">(current)</span></a>
-                <!-- <a class="nav-item nav-link disabled" href="/logout">Logout </a> -->
-                <!-- <a class="nav-item nav-link disabled" href="#">Disabled</a> -->
             </div>
         </div>
     </nav>
@@ -247,7 +244,7 @@
         document.getElementById('login').addEventListener("click",()=>{
             var username = document.getElementById('user1').value;
             localStorage.setItem('username',username);
-            alert(localStorage.getItem('username'));
+            // alert(localStorage.getItem('username'));
         });
         document.getElementById('note').addEventListener('click',()=>{
         console.log("clickeed");

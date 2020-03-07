@@ -1,6 +1,7 @@
 var express = require("express"),
     app = express(),
     mongoose = require('mongoose'),
+    dotenv = require("dotenv").config(),
     bodyParser = require("body-parser"),
     passport = require("passport"),
     localStrategy = require("passport-local"),
@@ -10,9 +11,8 @@ var express = require("express"),
     loginRoute = require('./routes/login'),
     protectRoute = require('./routes/protect'),
     ejs = require("ejs");
-    // methodOverride = require("method-override");
     
-mongoose.connect("mongodb://localhost/Notes",{ useNewUrlParser: true, useUnifiedTopology: true },()=>{
+mongoose.connect(process.env.REMOTEDB,{ useNewUrlParser: true, useUnifiedTopology: true },()=>{
     console.log("db connected")
 });
 
